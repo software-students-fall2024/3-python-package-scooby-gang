@@ -8,6 +8,8 @@
 
 ## Description
 
+Get your fortune for python.
+
 ## Usage
 
 ### Command Line

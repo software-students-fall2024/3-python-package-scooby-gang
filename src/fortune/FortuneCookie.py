@@ -1,47 +1,36 @@
 import random
 
-def quoteGetter(fortuneAmount, fortuneType):
+def quoteGetter(fortuneAmount):
     #maybe edit to pass file to lists o we don't open/clsoe on each
    fortunes = 0
-   while fortunes < fortuneAmount: 
+   list = []
+   while fortunes < fortuneAmount:
+    print("What kind of fortune do you want? ")
+    fortuneType = input("Type G for Good, Type B for Bad:") 
     fortunes+=1
-    if fortuneType == "g":
-            f = open("GoodFortune.txt", "r")
-            fortune = random.randrange(0, 35, 1)
-            cur = 0
-            for line in f:
-                # Print chosen line
-                cur +=1
-                if cur == fortune:
-                    print(line.strip())
-                else:
-                    line.strip()
-            f.close()
-            print("What kind of fortune do you want? ")
-            fortuneType = input("Type G for Good, Type B for Bad:")
-    else:
-            f = open("BadFortune.txt", "r")
-            fortune = random.randrange(0, 35, 1)
-            cur = 0
-            for line in f:
-                # Print chosen line
-                cur +=1
-                if cur == fortune:
-                    print(line.strip())
-                else:
-                    line.strip()
-            f.close()
-            print("What kind of fortune do you want? ")
-            fortuneType = input("Type G for Good, Type B for Bad:")
-   return 
+    if fortuneType == "g" or fortuneType == "G":
+        lines = open("GoodFortune.txt").read().splitlines()
+        choice = random.choice(lines)
+        list.append(choice)
+        print(choice)
+
+    elif fortuneType == "b" or fortuneType == "B":
+        lines = open("BadFortune.txt").read().splitlines()
+        choice = random.choice(lines)
+        list.append(choice)
+        print(choice)
+        
+    else : 
+        print("Please pick a valid option (G or B) \n")
+        fortunes-=1
+   return list
 
 def customFortuneCookie(userQuote) :
     #prints image of fortune cookie with quote
-    addQuote(userQuote, "g")
     fortune_cookie_image = f"""                                                                                                    
                                                                                                         
                                                                                                         
-                                                                                                        
+                                                                                 
                                 .@@*#@+%#...........                                                 
                             ..@*+=========####*++@@@..                                                
                             .@@==--===+==--===#=======+++.                                              
@@ -76,16 +65,68 @@ def customFortuneCookie(userQuote) :
                                                                                                         """
     #credit to https://www.asciiart.eu/image-to-ascii for conversion of a regular image of a fortune cookie to ASCII image
     print(fortune_cookie_image)
-    return 
+    return True
 
-def fortuneCookie() :
-    #prints image of fortune cookie
-    
-    return 
+def fortuneCookie():
+    #prints image of fortune cookie without quote
+    fortune_cookie_image = f"""                                                                                                    
+                                                                                                        
+                                                                                                        
+                                                                                 
+                                .@@*#@+%#...........                                                 
+                            ..@*+=========####*++@@@..                                                
+                            .@@==--===+==--===#=======+++.                                              
+                        .@+==------==*@=---=@#===----==+@.                                            
+                        .@===-:::::--==+%%=---==+==------==+@.                           =@@-=#@        
+                    @-==--::---:-===+#*=---=====---:---==++.              .:@=@%=...........%.       
+                    +@===---------=====@*=-----==----::--====%....... @@:.=++:................@.       
+                    @===---------======*@*=----------:::@--====@@%#=%.........................:@        
+                .@===--------==@=====@%@=---------::::---====@%@..........................:+=*        
+                =#===-------=========+#*@=-------:::::---=====+*+............................#.        
+                :@==--------==========%%@=----------::----====+@#=...........................=@.        
+                @==-------====*======@%@==--------:::----=====+@#...........................-*-.        
+                @==-------==+%#===-==+##@=-------::::---======+*%=..........==###%@%##-..==#@@@..        
+                @==-------==+#*#=====#@@@=@-----:::::---==-====@@@..........==@@@*=*@@=...........        
+                @==-----====+#+=====#@@=*=----::-::---======++@#+%@%@+........                            
+                %+==----===#+#=====##@..%=------::----======+=@%..                                         
+                #+=========#@*==+@@@....=----:::::---=======+@@...                                         
+                .@*++========%+++@%......@=--::::::-@====@=++@@..                                            
+                %+++######+++@@...     .+=--::::--=======+%@@...                                            
+                @+#@@##++@@.           .@-::----======+++-#@..                                              
+                .*+#@#@   ..           @=#@--=======@+#=@+%...                                              
+                                    @=@=======+++@@@#@:.                                                 
+                                    @+===+%=+++#%@@+@..                                                  
+                                    ++=====##@#@#@@@..                                                   
+                                    .#+++##@@%%@@@....                                                   
+                                    .##%@@@@@@#@...                                                      
+                                    .:+@*@@@+@.                                                          
+                                    .. %@@@...                                                           
+                                                                                                        
+                                                                                                        
+                                                                                                        
+                                                                                                        """
+    #credit to https://www.asciiart.eu/image-to-ascii for conversion of a regular image of a fortune cookie to ASCII image
+    print(fortune_cookie_image)
+    return True
 
 def randomFortuneCookie(fortuneAmount) :
     #caps at 5
-    return
+
+    if fortuneAmount > 5:
+        print("Please pick less than 5")
+        return False
+
+    good = open("GoodFortune.txt").read().splitlines()
+    bad = open("BadFortune.txt").read().splitlines()
+
+    for i in range(fortuneAmount):
+
+        choices = good + bad
+
+        random_choice = random.choice(choices)
+
+        customFortuneCookie(random_choice)
+    return True
 
 def addQuote(userQuote, quoteType): 
     #adds to quote file
@@ -93,33 +134,31 @@ def addQuote(userQuote, quoteType):
     #input("Is this fortune good, type g, or bad, type b:")
     if fortuneType == "g":
         f = open("GoodFortune.txt", "a")
-        f.write(userQuote)
+        f.write(userQuote + "\n")
         f.close()
     else:
         f = open("BadFortune.txt", "a")
-        f.write(userQuote)
+        f.write(userQuote + "\n")
         f.close()
-    return
+    return True
 
 def cookieScript(fortuneCustom):
     #Param is c to create your own fortune cookie or p to purchase some
     #fortuneCustom = input("Would you like to create your own fortune cookie or purchase some, enter c for create or p for purchase:")
+    print("Welcome to Scooby's Fortunes!")
+
     if fortuneCustom == "c":
-        userQuote = input("Enter your desired fortune:")
+        userQuote = input("Enter your custom fortune:")
         customFortuneCookie(userQuote)
         #might be too similar to other fortune cookie functions could change to have params be c or p and then do either customCookie or the code below for purchase
 
     else:
-        fortuneAmount = input("You can have up to 35 so how many fortune cookies do you want:")
+        fortuneAmount = int(input("You can have up to 10 so how many fortune cookies do you want:"))
 
-        if fortuneAmount != 0:
-            if fortuneAmount < 0 or fortuneAmount > 35:
-                i = 0
-                while i == 0:
-                    print("Inavlid Fortune amount, try again.")
-                    fortuneAmount = input("You can have up to 35 so how many fortune cookies do you want:")
-                    if fortuneAmount > -1 and fortuneAmount < 35:
-                        i = 1
+        while fortuneAmount < 0 or fortuneAmount > 10:
+            print("Inavlid Fortune amount, try again.")
+            fortuneAmount = int(input("You can have up to 10 so how many fortune cookies do you want:"))
+
         else:
             if fortuneAmount == 0:
                 print("Sad to see you go.")
@@ -128,29 +167,15 @@ def cookieScript(fortuneCustom):
                     fortuneRandom = input("Would you like a random fortune, yes or no:")
                     if fortuneRandom == "yes":
                         randomFortuneCookie(fortuneAmount)
-                    else:
-                        #TODO use quoteGetter
-                        print("What kind of fortune do you want? ")
-                        fortuneType = input("Type G for Good, Type B for Bad:")
+                    elif fortuneRandom == "no":
                         #credit to https://www.houstonpress.com/restaurants/fortune-cookie-sayings-youd-never-want-to-get-6412278 for bad fortunes
                         #credit to https://www.quora.com/If-you-were-a-fortune-cookie-writer-what-funny-and-unexpected-fortunes-would-you-include for bad fortunes
-                        quoteGetter(fortuneAmount, fortuneType)
+                        quoteGetter(fortuneAmount)
                         fortuneCookie()
                         
                 else: 
-                    #TODO: run functions
-                    print("What kind of fortune do you want? ")
-                    fortuneType = input("Type G for Good, Type B for Bad:")
-                    quoteGetter(fortuneAmount, fortuneType)
+                    quoteGetter(fortuneAmount)
                     fortuneCookie()
+
     print("Goodbye!")
 
-def main() :
-    print("Welcome to Scooby's Fortunes!")
-    cookieScript("c")
-    cookieScript("p")
-    return
-
-
-if __name__ == "__main__":
-   main()
