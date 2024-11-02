@@ -1,4 +1,4 @@
-name: [CI/CD]
+name: CI / CD
 on: [pull_request]
 jobs:
   build:
@@ -7,16 +7,16 @@ jobs:
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11"]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Python, pipenv and Pipfile packages
-        uses: actions/setup-python@v4
+        uses: kojoru/prepare-pipenv@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+      - name: Turn on 'editable' mode
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pipenv install -e .
       - name: Test with pytest
         run: |
-          pytest
+          pipenv install pytest
+          pipenv --venv
+          pipenv run python -m pytest
