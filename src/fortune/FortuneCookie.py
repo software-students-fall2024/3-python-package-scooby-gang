@@ -1,32 +1,45 @@
 import random
 
 def quoteGetter(fortuneAmount):
+    """Retrieves random good or bad fortunes based on user input and prints them.
+   
+    Args:
+        fortuneAmount(int): number of fortunes
+    
+    Returns: list of randomly generated fortunes based on user input.
+    """
     #maybe edit to pass file to lists o we don't open/clsoe on each
-   fortunes = 0
-   list = []
-   while fortunes < fortuneAmount:
-    print("What kind of fortune do you want? ")
-    fortuneType = input("Type G for Good, Type B for Bad:") 
-    fortunes+=1
-    if fortuneType == "g" or fortuneType == "G":
-        lines = open("GoodFortune.txt").read().splitlines()
-        choice = random.choice(lines)
-        list.append(choice)
-        print(choice)
+    fortunes = 0
+    list = []
+    while fortunes < fortuneAmount:
+        print("What kind of fortune do you want? ")
+        fortuneType = input("Type G for Good, Type B for Bad:") 
+        fortunes+=1
+        if fortuneType == "g" or fortuneType == "G":
+            lines = open("GoodFortune.txt").read().splitlines()
+            choice = random.choice(lines)
+            list.append(choice)
+            print(choice)
 
-    elif fortuneType == "b" or fortuneType == "B":
-        lines = open("BadFortune.txt").read().splitlines()
-        choice = random.choice(lines)
-        list.append(choice)
-        print(choice)
+        elif fortuneType == "b" or fortuneType == "B":
+            lines = open("BadFortune.txt").read().splitlines()
+            choice = random.choice(lines)
+            list.append(choice)
+            print(choice)
         
-    else : 
-        print("Please pick a valid option (G or B) \n")
-        fortunes-=1
-   return list
+        else : 
+            print("Please pick a valid option (G or B) \n")
+            fortunes-=1
+    return list
 
 def customFortuneCookie(userQuote) :
-    #prints image of fortune cookie with quote
+    """Prints image of fortune cookie with quote.
+
+    Args:
+        userQuote(String): custom user quote
+
+    Returns: True if image is printed
+    """
     fortune_cookie_image = f"""                                                                                                    
                                                                                                         
                                                                                                         
@@ -68,7 +81,10 @@ def customFortuneCookie(userQuote) :
     return True
 
 def fortuneCookie():
-    #prints image of fortune cookie without quote
+    """Prints image of fortune cookie without quote.
+
+    Returns: True if image is printed
+    """
     fortune_cookie_image = f"""                                                                                                    
                                                                                                         
                                                                                                         
@@ -110,10 +126,16 @@ def fortuneCookie():
     return True
 
 def randomFortuneCookie(fortuneAmount) :
-    #caps at 5
+    """Prints a number of randomly generated fortune cookies.
+
+    Args:
+        fortuneAmount(int): the amount of fortunes 
+
+    Returns: True if method if successful, False otherwise
+    """
 
     if fortuneAmount > 5:
-        print("Please pick less than 5")
+        print("fortune amount exceeds 5")
         return False
 
     good = open("GoodFortune.txt").read().splitlines()
@@ -129,10 +151,17 @@ def randomFortuneCookie(fortuneAmount) :
     return True
 
 def addQuote(userQuote, quoteType): 
-    #adds to quote file
+    """Adds a custom user quote to the file.
+
+    Args:
+        userQuote(String): custom user quote
+        quoteType(String): good or bad quote (everything but g/G is considered bad)
+
+    Returns: True if method is successful
+    """
     fortuneType = quoteType
-    #input("Is this fortune good, type g, or bad, type b:")
-    if fortuneType == "g":
+
+    if fortuneType == "g" or fortuneType == "G":
         f = open("GoodFortune.txt", "a")
         f.write(userQuote + "\n")
         f.close()
@@ -143,8 +172,14 @@ def addQuote(userQuote, quoteType):
     return True
 
 def cookieScript(fortuneCustom):
-    #Param is c to create your own fortune cookie or p to purchase some
-    #fortuneCustom = input("Would you like to create your own fortune cookie or purchase some, enter c for create or p for purchase:")
+    """A simulated process of getting fortunes. Param is c to create your own fortune cookie or p to purchase some.
+
+    Args:
+        fortuneCustom(String): the type of fortune generation process the user wants
+
+    Returns: True if method is successful
+    """
+
     print("Welcome to Scooby's Fortunes!")
 
     if fortuneCustom == "c":
@@ -178,4 +213,6 @@ def cookieScript(fortuneCustom):
                     fortuneCookie()
 
     print("Goodbye!")
+
+    return True
 
