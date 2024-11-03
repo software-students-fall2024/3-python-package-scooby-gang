@@ -15,19 +15,19 @@ This project allows users to receive randomly generated fortunes, either good or
 ### Command Line
 To use the fortune generator from the command line, navigate to the project’s root directory and use the following command:
 
-python -m src.fortune.FortuneCookie
+> python -m src.fortune.FortuneCookie
 
 This will prompt you to choose between generating a custom fortune or purchasing random fortunes. You will receive fortunes directly in the terminal based on your input.
 
 Here’s a breakdown of the options:
 
-Custom Fortune (c): When prompted, type c to enter a custom fortune. You’ll then be asked to enter the custom fortune text, which will appear in a fortune cookie image.
-Purchase Fortunes (p): When prompted, type p to select a number of fortunes. You’ll then be asked how many fortunes you’d like (up to a maximum of 10). If you select more than 5 fortunes, the program will ask you to enter a valid amount.
+**Custom Fortune (c)**: When prompted, type c to enter a custom fortune. You’ll then be asked to enter the custom fortune text, which will appear in a fortune cookie image.
+**Purchase Fortunes (p)**: When prompted, type p to select a number of fortunes. You’ll then be asked how many fortunes you’d like (up to a maximum of 10). If you select more than 5 fortunes, the program will ask you to enter a valid amount.
 
 ### Import into Project
 To use the fortune generator as a module within your Python project, import specific functions from FortuneCookie.py in your code:
 
-from src.fortune.FortuneCookie import quoteGetter, customFortuneCookie, addQuote, fortuneCookie, randomFortuneCookie, cookieScript
+> from src.fortune.FortuneCookie import quoteGetter, customFortuneCookie, addQuote, fortuneCookie, randomFortuneCookie, cookieScript
 
 Here’s a brief description of each function and how to use it:
 
