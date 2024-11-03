@@ -22,6 +22,7 @@ This will prompt you to choose between generating a custom fortune or purchasing
 Here’s a breakdown of the options:
 
 **Custom Fortune (c)**: When prompted, type c to enter a custom fortune. You’ll then be asked to enter the custom fortune text, which will appear in a fortune cookie image.
+
 **Purchase Fortunes (p)**: When prompted, type p to select a number of fortunes. You’ll then be asked how many fortunes you’d like (up to a maximum of 10). If you select more than 5 fortunes, the program will ask you to enter a valid amount.
 
 ### Import into Project
