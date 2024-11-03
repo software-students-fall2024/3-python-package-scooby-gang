@@ -48,4 +48,5 @@ We welcome contributions! Here’s how you can help:
 4. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory.
 5. **Commit and Push Your Changes**: After finishing your work on local machine, commit and push your changes to git.
 6. **Create a Pull Request**: Go to the original repository and create a pull request for your changes.
-!Please ensure your codes come with meaningful commit messages and follow the PEP 8 standard, which can be found in detail [here](https://peps.python.org/pep-0008/).
+
+Please ensure your codes come with meaningful commit messages and follow the PEP 8 standard, which can be found in detail [here](https://peps.python.org/pep-0008/).
