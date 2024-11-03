@@ -15,7 +15,7 @@ This project allows users to receive randomly generated fortunes, either good or
 ### Command Line
 To use the fortune generator from the command line, navigate to the project’s root directory and use the following command:
 
-> python -m src.fortune.FortuneCookie
+> $python -m src.fortune.FortuneCookie
 
 This will prompt you to choose between generating a custom fortune or purchasing random fortunes. You will receive fortunes directly in the terminal based on your input.
 
@@ -40,5 +40,12 @@ randomFortuneCookie(fortuneAmount): Prints a specified number of random fortunes
 cookieScript(fortuneCustom): Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'p' for purchasing multiple fortunes.
 
 ## Contributing
- 
-Alan worked with test_fortune.py for functions' unit tests.
+We welcome contributions! Here’s how you can help:
+1. **Fork the Repository**: Start by forking the repository and cloning your fork to your local machine.
+2. **Install Dependencies**: Make sure you have the necessary dependencies installed. You can install any required packages using:
+   >pip install -r requirements.txt
+3. **Create a New Branch**: Create a branch for your feature or bug fix.
+4. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory.
+5. **Commit and Push Your Changes**: After finishing your work on local machine, commit and push your changes to git.
+6. **Create a Pull Request**: Go to the original repository and create a pull request for your changes.
+!Please ensure your codes come with meaningful commit messages and follow the PEP 8 standard, which can be found in detail [here](https://peps.python.org/pep-0008/).
