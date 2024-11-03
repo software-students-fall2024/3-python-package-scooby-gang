@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fortune"
+description = "Fortune Generator for python."
+version = "0.1.0"
+authors = [
+  { name="Lucia Song", email="lys7942@nyu.edu" },
+  { name="Yeshni Savadatti", email="ys4823@nyu.edu"},
+  { name="Alan Zhao", email="sz3562@nyu.edu"},
+  { name="Chelsea", email="csh7916@nyu.edu"}
+]
+
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["python", "package", "build", "tutorial"]
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/software-students-fall2024/3-python-package-scooby-gang"
+"Repository" = "https://github.com/software-students-fall2024/3-python-package-scooby-gang.git"
+"Bug Tracker" = "https://github.com/software-students-fall2024/3-python-package-scooby-gang/issues"
+
+[project.scripts]
+fortune = "fortune.__main__:main"
