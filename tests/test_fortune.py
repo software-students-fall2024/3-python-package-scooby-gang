@@ -177,5 +177,5 @@ class Tests:
         for expected_output in expected_outputs:
             assert expected_output in captured.out, f"Expected '{expected_output}' in output, but it was not found." 
                    
-    def test_1(self):
-        assert True  # Replace with actual tests
+    #def test_1(self):
+    #    assert True  # Replace with actual tests
