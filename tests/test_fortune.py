@@ -1,8 +1,8 @@
 import pytest
-from src.fortune.FortuneCookie import quoteGetter, customFortuneCookie, addQuote, fortuneCookie, randomFortuneCookie
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.fortune.FortuneCookie import quoteGetter, customFortuneCookie, addQuote, fortuneCookie, randomFortuneCookie, cookieScript
 
 class Tests:
 
@@ -32,8 +32,8 @@ class Tests:
         actual = True  # the value we see in reality
         assert actual == expected, "Expected True to be equal to True!"
 
-    def test_quoteGetter(self):
-        fortunes = quoteGetter_with_temp_files(4)
+    def test_quoteGetter(self, capsys):
+        fortunes = quoteGetter(4)
         captured = capsys.readouterr()
 
         assert "A fresh start will put you on your way." in captured.out or "All your hard work will soon pay off." in captured.out
@@ -119,7 +119,7 @@ class Tests:
         (6, "fortune amount exceeds 5", False),  # Test case for exceeding amount: print warning and return False
         (0, "", True)  # Test case for zero amount: no output, return True
     ])
-    def test_randomFortuneCookie(fortuneAmount, expected_output, expected_return, capsys):
+    def test_randomFortuneCookie(self, fortuneAmount, expected_output, expected_return, capsys):
 
         result = randomFortuneCookie(fortuneAmount)
         captured = capsys.readouterr()
@@ -177,7 +177,5 @@ class Tests:
         for expected_output in expected_outputs:
             assert expected_output in captured.out, f"Expected '{expected_output}' in output, but it was not found." 
                    
-    def test_
-
     def test_1(self):
         assert True  # Replace with actual tests
