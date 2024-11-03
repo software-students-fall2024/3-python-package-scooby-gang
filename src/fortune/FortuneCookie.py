@@ -172,15 +172,13 @@ def addQuote(userQuote, quoteType):
     return True
 
 def cookieScript(fortuneCustom):
-    """A simulated process of getting fortunes. Param is c to create your own fortune cookie or p to purchase some.
+    """A simulated process of getting fortunes. Param is c to create your own fortune cookie or r for random.
 
     Args:
         fortuneCustom(String): the type of fortune generation process the user wants
 
     Returns: True if method is successful
     """
-
-    print("Welcome to Scooby's Fortunes!")
 
     if fortuneCustom == "c":
         userQuote = input("Enter your custom fortune:")

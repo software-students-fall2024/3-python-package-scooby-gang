@@ -1,34 +1,14 @@
 import FortuneCookie as FortuneCookie
 
 def main():
-    #prints 5 good fortunes
-    FortuneCookie.quoteGetter(5)
+    print("Welcome to Scooby's Fortunes!")
 
-    #custom fortune cookie
-    print("Custom fortune cookie: \n")
-    FortuneCookie.customFortuneCookie("You will get ice cream.")
-    print("\n")
+    option = input("Do you want to generate random fortunes or create your own? (r for random, c for create)")
 
-    #add quote to data
-    print("Custom quote added to file: \n")
-    FortuneCookie.addQuote("You will get ice cream.", "g")
-    print("\n")
-
-    #random fortune
-    print("Get 2 random fortune cookies: \n")
-    FortuneCookie.randomFortuneCookie(2)
-    print("\n")
-
-    #fortune cookie image
-    print("Fortune Cookie Image:")
-    FortuneCookie.fortuneCookie()
-
-    #cookieScript
-    print("Simulated experience of getting fortunes: \n")  
-    print("Shopping for fortunes: \n")
-    FortuneCookie.cookieScript("s")
-    print("\nCustom fortune making: \n")
-    FortuneCookie.cookieScript("c")
+    if option != "c" or option != "r":
+        print("Invalid options")
+    else: 
+        FortuneCookie.cookieScript(option)
 
 
 if __name__ == "__main__":
