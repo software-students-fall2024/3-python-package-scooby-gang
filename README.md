@@ -43,7 +43,7 @@ cookieScript(fortuneCustom): Simulates a process of creating or purchasing fortu
 We welcome contributions! Here’s how you can help:
 1. **Fork the Repository**: Start by forking the repository and cloning your fork to your local machine.
 2. **Install Dependencies**: Make sure you have the necessary dependencies installed. You can install any required packages using:
-   >pip install -r requirements.txt
+   > $pip install -r requirements.txt
 3. **Create a New Branch**: Create a branch for your feature or bug fix.
 4. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory.
 5. **Commit and Push Your Changes**: After finishing your work on local machine, commit and push your changes to git.
