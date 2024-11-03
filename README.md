@@ -32,12 +32,12 @@ To use the fortune generator as a module within your Python project, import spec
 
 Here’s a brief description of each function and how to use it:
 
-quoteGetter(fortuneAmount): Retrieves and prints a specified number of random good or bad fortunes. Returns a list of generated fortunes.
-customFortuneCookie(userQuote): Prints a fortune cookie image with a custom fortune message passed as userQuote.
-addQuote(userQuote, quoteType): Adds a custom fortune to either the good or bad fortune file. Specify quoteType as 'g' for good and 'b' for bad.
-fortuneCookie(): Prints a blank fortune cookie image.
-randomFortuneCookie(fortuneAmount): Prints a specified number of random fortunes from both good and bad files.
-cookieScript(fortuneCustom): Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'p' for purchasing multiple fortunes.
+quoteGetter(fortuneAmount): Retrieves and prints a specified number of random good or bad fortunes. Returns a list of generated fortunes.<br>
+customFortuneCookie(userQuote): Prints a fortune cookie image with a custom fortune message passed as userQuote.<br>
+addQuote(userQuote, quoteType): Adds a custom fortune to either the good or bad fortune file. Specify quoteType as 'g' for good and 'b' for bad.<br>
+fortuneCookie(): Prints a blank fortune cookie image.<br>
+randomFortuneCookie(fortuneAmount): Prints a specified number of random fortunes from both good and bad files.<br>
+cookieScript(fortuneCustom): Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'p' for purchasing multiple fortunes.<br>
 
 ## Contributing
 We welcome contributions! Here’s how you can help:
