@@ -2,9 +2,7 @@ import FortuneCookie as FortuneCookie
 
 def main():
     #prints 5 good fortunes
-    print("Get 5 fortunes: \n")
     FortuneCookie.quoteGetter(5)
-    print("\n")
 
     #custom fortune cookie
     print("Custom fortune cookie: \n")

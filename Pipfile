@@ -14,7 +14,7 @@ verify_ssl = true
 name = "testpypi"
 
 [packages]
-examplepackagefb1258 = {version = "==0.0.7", index = "testpypi"}
+fortune = {version = "==0.1.0", index = "testpypi"}
 
 [dev-packages]
 pytest = "*"
