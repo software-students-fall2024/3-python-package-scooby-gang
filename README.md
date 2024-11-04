@@ -17,7 +17,7 @@ This project allows users to receive randomly generated fortunes, either good or
 ```pip install pipenv OR pip3 install pipenv``` <br>
 
 2. Install the package within the virtual environment: <br>
-```pipenv install fortune``` <br>
+```pipenv install python-fortune-cookie``` <br>
 
 3. Activate the virtual environment: <br>
 ```pipenv shell``` <br>
