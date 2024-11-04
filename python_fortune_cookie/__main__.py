@@ -1,4 +1,4 @@
-import fortune.FortuneCookie as FortuneCookie
+import python_fortune_cookie.FortuneCookie as FortuneCookie
 
 def main():
     option = input("Do you want to generate random fortunes or create your own? (r for random, c for create): ")

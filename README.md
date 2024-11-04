@@ -38,7 +38,7 @@ Here’s a breakdown of the options:
 ### Importing the package into a Separate Python Project
 To use the fortune generator as a module within your Python project, import specific functions from FortuneCookie.py in your code:
 
-```from fortune import FortuneCookie```
+```from python_fortune_cookie import FortuneCookie```
 
 Here’s a brief description of each function and how to use it: <br>
 
