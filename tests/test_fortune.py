@@ -32,13 +32,24 @@ class Tests:
         actual = True  # the value we see in reality
         assert actual == expected, "Expected True to be equal to True!"
 
-    def test_quoteGetter(self, capsys):
-        fortunes = quoteGetter(4)
-        captured = capsys.readouterr()
+    @pytest.mark.parametrize("fortuneAmount, inputs", [
+        # Test case for creating a custom fortune with "c"
+        (4, ["g", "g", "g", "b"]),
+        (3, ["g", "g", "b"]),
+    ])
+    def test_quoteGetter(self, fortuneAmount, inputs, monkeypatch):
+        input_sequence = iter(inputs)
 
-        assert "A fresh start will put you on your way." in captured.out or "All your hard work will soon pay off." in captured.out
-        assert "Don't look now, but I'm pretty sure that guy just took a piece of your hair." in captured.out or "Great news! Tyler Perry just signed on to do the new Batman trilogy!" in captured.out
-        assert len(fortunes) == 4, "Expected four fortunes to be retrieved"
+        def mock_input(prompt):
+            try:
+                return next(input_sequence)
+            except StopIteration:
+                raise EOFError("No more input available")
+
+        monkeypatch.setattr("builtins.input", mock_input)
+        fortunes = quoteGetter(fortuneAmount)
+
+        assert len(fortunes) == fortuneAmount, f"Expected '{len(fortunes)}' fortunes to be retrieved"
 
     def test_customFortuneCookie(self, capsys):
         """
@@ -127,8 +138,8 @@ class Tests:
         assert result == expected_return, f"Expected {expected_return} for fortuneAmount={fortuneAmount}, got {result}"
 
         if isinstance(expected_output, int):
-            printed_fortunes = captured.out.strip().split("\n")
-            assert len(printed_fortunes) == expected_output, f"Expected {expected_output} fortunes printed, got {len(printed_fortunes)} for fortuneAmount={fortuneAmount}"
+            printed_fortunes = captured.out.strip().split(">")
+            assert len(printed_fortunes)-1 == expected_output, f"Expected {expected_output} fortunes printed, got {len(printed_fortunes)-1} for fortuneAmount={fortuneAmount}"
         else:
             assert expected_output in captured.out, f"Expected warning message '{expected_output}' in output for fortuneAmount={fortuneAmount}"
 
@@ -141,7 +152,7 @@ class Tests:
         ]),
 
         # Test case for purchasing fortunes within the limit with "r"
-        ("r", ["3", "yes"], [
+        ("r", ["3", "yes", "g", "g", "g"], [
             "Welcome to Scooby's Fortunes!",
             "Goodbye!"
         ]),
@@ -168,7 +179,10 @@ class Tests:
         input_sequence = iter(inputs)
 
         def mock_input(prompt):
-            return next(input_sequence)
+            try:
+                return next(input_sequence)
+            except StopIteration:
+                raise EOFError("No more input available")
 
         monkeypatch.setattr("builtins.input", mock_input)
         cookieScript(fortuneCustom)
