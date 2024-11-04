@@ -180,6 +180,8 @@ def cookieScript(fortuneCustom):
     Returns: True if method is successful
     """
 
+    print("Welcome to Scooby's Fortunes!")
+
     if fortuneCustom == "c":
         userQuote = input("Enter your custom fortune: ")
         customFortuneCookie(userQuote)
