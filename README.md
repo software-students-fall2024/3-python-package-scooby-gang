@@ -14,6 +14,10 @@ Get your fortune for Python! <br>
 This project allows users to receive randomly generated fortunes, either good or bad, by running commands in the terminal or by importing and using it as a module within a Python project. Users can create custom fortunes, generate a batch of random fortunes, or retrieve fortunes with a single function call.
 
 ### Installing and Using this Package in a Virtual Environment
+1. Clone this repo and make sure to cd into the root of this project directory with: <br>
+```git clone git@github.com:software-students-fall2024/3-python-package-scooby-gang.git``` <br>
+```cd 3-python-package-scooby-gang``` <br>
+
 1. Make sure python is installed and install pipenv: <br>
 ```pip install pipenv OR pip3 install pipenv``` <br>
 
