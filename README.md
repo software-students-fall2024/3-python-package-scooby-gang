@@ -61,12 +61,12 @@ For example: <br>
 
 For example: <br>
 ```fortuneCookie()``` <br>
-
 <br> <br>
 **randomFortuneCookie(fortuneAmount)**: Prints a specified number of random fortunes from both good and bad files.<br>
 
 For example: <br>
 ```randomFortuneCookie(5)``` <br>
+<br><br>
 **cookieScript(fortuneCustom)**: Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'r' for random fortunes.<br>
 
 For example: <br>
