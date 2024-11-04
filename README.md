@@ -81,7 +81,7 @@ We welcome contributions! Here’s how you can help:
 and then: <br>
 ```pipenv shell``` <br>
 3. **Install Dependencies**: Make sure you have the necessary dependencies installed if pipenv was not used: <br>
-```$pip install -r requirements.txt OR pip3 install -r requirements.txt``` <br>
+```pip install -r requirements.txt OR pip3 install -r requirements.txt``` <br>
 4. **Create a New Branch**: Create a branch for your feature or bug fix.
 5. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory. To run tests, use the command: <br>
 ```python -m pytest OR python3 -m pytest``` <br>
