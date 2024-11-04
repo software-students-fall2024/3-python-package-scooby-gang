@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fortune"
-description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
+description = "Fortune Cookie Generator for python."
 version = "0.1.0"
 authors = [
   { name="Yeshni Savadatti", email= "ys4823@nyu.edu" }, { name="Lucia Song", email="lys7942@nyu.edu"}, { name="Chelsea Hodgson", email="csh7916@nyu.edu"}, { name="Alan Zhao", email="sz3562@nyu.edu"},
@@ -23,12 +23,29 @@ classifiers = [
 dependencies = [ "feedparser >= 5.2.0",
     "html2text",
     'tomli; python_version < "3.11"',]
-dev = ["pytest"]
+
+
+[project.optional-dependencies]
+
+dev = ["pytest",  "bumpver"]
 
 [project.urls]
 "Homepage" = "https://github.com/software-students-fall2024/3-python-package-scooby-gang"
 "Repository" = "https://github.com/software-students-fall2024/3-python-package-scooby-gang.git"
 "Bug Tracker" = "https://github.com/software-students-fall2024/3-python-package-scooby-gang/issues"
+
+
+[tool.bumpver]
+current_version = "1.0.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message  = "Bump version {old_version} -> {new_version}"
+commit          = true
+tag             = true
+push            = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"src/fortune/__init__.py" = ["{version}"]
 
 [project.scripts]
 fortune = "fortune.__main__:main"
