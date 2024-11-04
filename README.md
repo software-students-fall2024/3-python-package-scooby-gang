@@ -26,7 +26,7 @@ This project allows users to receive randomly generated fortunes, either good or
 ### Command Line
 To use the fortune generator from the command line after installing the package and activating the virtual environment, navigate to the project’s root directory and use the following command:
 
-```python -m fortune```
+```python -m python_fortune_cookie```
 
 This will prompt you to choose between generating a custom fortune or choosing random fortunes. You will receive fortunes directly in the terminal based on your input.
 
