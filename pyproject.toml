@@ -45,7 +45,7 @@ push            = false
 
 [tool.bumpver.file_patterns]
 "pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
-fortune/__init__.py" = ["{version}"]
+"fortune/__init__.py" = ["{version}"]
 
 [project.scripts]
-fortune = "fortune.__main__:main"
+fortune = "python_fortune_cookie.fortune.__main__:main"
