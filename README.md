@@ -10,40 +10,68 @@
 Get your fortune for Python!
 
 ## Usage
-This project allows users to receive randomly generated fortunes, either good or bad, by running commands in the terminal or by importing and using it as a module within a Python project. Users can create custom fortunes, purchase a batch of fortunes, or retrieve fortunes with a single function call.
+This project allows users to receive randomly generated fortunes, either good or bad, by running commands in the terminal or by importing and using it as a module within a Python project. Users can create custom fortunes, generate a batch of random fortunes, or retrieve fortunes with a single function call.
+
+### Installing and Using this Package
+1. Install pipenv: <br>
+```pip install pipenv OR pip3 install pipenv``` <br>
+
+2. Install the package: <br>
+```pipenv install fortune``` <br>
+
+3. Activate the virtual environment: <br>
+```pipenv shell``` <br>
 
 ### Command Line
-To use the fortune generator from the command line, navigate to the project’s root directory and use the following command:
+To use the fortune generator from the command line after installing the package and activating the virtual environment, navigate to the project’s root directory and use the following command:
 
-> $python -m src.fortune.FortuneCookie
+```python -m fortune```
 
-This will prompt you to choose between generating a custom fortune or purchasing random fortunes. You will receive fortunes directly in the terminal based on your input.
+This will prompt you to choose between generating a custom fortune or choosing random fortunes. You will receive fortunes directly in the terminal based on your input.
 
 Here’s a breakdown of the options:
 
 **Custom Fortune (c)**: When prompted, type c to enter a custom fortune. You’ll then be asked to enter the custom fortune text, which will appear in a fortune cookie image.
 
-**Purchase Fortunes (p)**: When prompted, type p to select a number of fortunes. You’ll then be asked how many fortunes you’d like (up to a maximum of 10). If you select more than 5 fortunes, the program will ask you to enter a valid amount.
+**Random Fortunes (r)**: When prompted, type r to select a number of fortunes. You’ll then be asked how many fortunes you’d like (up to a maximum of 10). If you select more than 10 fortunes, the program will ask you to enter a valid amount.
 
-### Import into Project
+### Importing the package into a Separate Python Project
 To use the fortune generator as a module within your Python project, import specific functions from FortuneCookie.py in your code:
 
-> from src.fortune.FortuneCookie import quoteGetter, customFortuneCookie, addQuote, fortuneCookie, randomFortuneCookie, cookieScript
+```from fortune import FortuneCookie```
 
 Here’s a brief description of each function and how to use it:
 
 **quoteGetter(fortuneAmount)**: Retrieves and prints a specified number of random good or bad fortunes. Returns a list of generated fortunes.<br>
+
+For example: <br>
+```quoteGetter(10)``` <br>
 **customFortuneCookie(userQuote)**: Prints a fortune cookie image with a custom fortune message passed as userQuote.<br>
+
+For example: <br>
+```quoteGetter("You will get ice cream.")``` <br>
 **addQuote(userQuote, quoteType)**: Adds a custom fortune to either the good or bad fortune file. Specify quoteType as 'g' for good and 'b' for bad.<br>
+
+For example: <br>
+```quoteGetter("You will get ice cream.", "g")``` <br>
 **fortuneCookie()**: Prints a blank fortune cookie image.<br>
+
+For example: <br>
+```fortuneCookie()``` <br>
 **randomFortuneCookie(fortuneAmount)**: Prints a specified number of random fortunes from both good and bad files.<br>
-**cookieScript(fortuneCustom)**: Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'p' for purchasing multiple fortunes.<br>
+
+For example: <br>
+```randomFortuneCookie(5)``` <br>
+**cookieScript(fortuneCustom)**: Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'r' for random fortunes.<br>
+
+For example: <br>
+```cookieScript("c")``` <br>
 
 ## Contributing
 We welcome contributions! Here’s how you can help:
 1. **Fork the Repository**: Start by forking the repository and cloning your fork to your local machine.
 2. **Install Dependencies**: Make sure you have the necessary dependencies installed. You can install any required packages using:
-   > $pip install -r requirements.txt
+```$pip install -r requirements.txt``` <br>
 3. **Create a New Branch**: Create a branch for your feature or bug fix.
 4. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory.
 5. **Commit and Push Your Changes**: After finishing your work on local machine, commit and push your changes to git.
