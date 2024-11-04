@@ -119,6 +119,7 @@ class Tests:
         (6, "fortune amount exceeds 5", False),  # Test case for exceeding amount: print warning and return False
         (0, "", True)  # Test case for zero amount: no output, return True
     ])
+
     def test_randomFortuneCookie(self, fortuneAmount, expected_output, expected_return, capsys):
 
         result = randomFortuneCookie(fortuneAmount)
@@ -139,27 +140,27 @@ class Tests:
             "Goodbye!"
         ]),
 
-        # Test case for purchasing fortunes within the limit with "p"
-        ("p", ["3", "yes"], [
+        # Test case for purchasing fortunes within the limit with "r"
+        ("r", ["3", "yes"], [
             "Welcome to Scooby's Fortunes!",
             "Goodbye!"
         ]),
 
         # Test case for purchasing zero fortunes (should exit)
-        ("p", ["0"], [
+        ("r", ["0"], [
             "Welcome to Scooby's Fortunes!",
             "Sad to see you go.",
             "Goodbye!"
         ]),
 
         # Test case for exceeding the limit and retrying a valid number
-        ("p", ["11", "3", "no"], [
+        ("r", ["11", "3", "no"], [
             "Welcome to Scooby's Fortunes!",
             "Inavlid Fortune amount, try again.",
             "Goodbye!"
         ]),
     ])
-    def test_cookieScript(self, fortuneCustom, inputs, expected_outputs, capsys):
+    def test_cookieScript(self, fortuneCustom, inputs, expected_outputs, capsys, monkeypatch):
         """
         Test cookieScript function with different input scenarios.
         """
@@ -169,13 +170,10 @@ class Tests:
         def mock_input(prompt):
             return next(input_sequence)
 
-        with pytest.monkeypatch.context() as m:
-            m.setattr("builtins.input", mock_input)
-            cookieScript(fortuneCustom)
-            captured = capsys.readouterr()
+        monkeypatch.setattr("builtins.input", mock_input)
+        cookieScript(fortuneCustom)
+        captured = capsys.readouterr()
 
         for expected_output in expected_outputs:
             assert expected_output in captured.out, f"Expected '{expected_output}' in output, but it was not found." 
                    
-    #def test_1(self):
-    #    assert True  # Replace with actual tests
