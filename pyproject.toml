@@ -4,15 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fortune"
-description = "Fortune Generator for python."
+description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
 version = "0.1.0"
 authors = [
-  { name="Lucia Song", email="lys7942@nyu.edu" },
-  { name="Yeshni Savadatti", email="ys4823@nyu.edu"},
-  { name="Alan Zhao", email="sz3562@nyu.edu"},
-  { name="Chelsea", email="csh7916@nyu.edu"}
+  { name="Yeshni Savadatti", email= "ys4823@nyu.edu" }, { name="Lucia Song", email="lys7942@nyu.edu"}, { name="Chelsea Hodgson", email="csh7916@nyu.edu"}, { name="Alan Zhao", email="sz3562@nyu.edu"},
 ]
-
 license = { file = "LICENSE" }
 readme = "README.md"
 keywords = ["python", "package", "build", "tutorial"]
@@ -24,7 +20,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-[project.optional-dependencies]
+dependencies = [ "feedparser >= 5.2.0",
+    "html2text",
+    'tomli; python_version < "3.11"',]
 dev = ["pytest"]
 
 [project.urls]
