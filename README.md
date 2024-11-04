@@ -7,7 +7,8 @@
 [Alan Zhao](https://github.com/Alan3562) <br>
 
 ## Description
-Get your fortune for Python!
+Get your fortune for Python! <br>
+[Link to PyPi](https://pypi.org/project/python-fortune-cookie/0.1.0/)
 
 ## Usage
 This project allows users to receive randomly generated fortunes, either good or bad, by running commands in the terminal or by importing and using it as a module within a Python project. Users can create custom fortunes, generate a batch of random fortunes, or retrieve fortunes with a single function call.
@@ -50,12 +51,12 @@ For example: <br>
 **customFortuneCookie(userQuote)**: Prints a fortune cookie image with a custom fortune message passed as userQuote.<br>
 
 For example: <br>
-```quoteGetter("You will get ice cream.")``` <br>
+```randomFortuneCookie("You will get ice cream.")``` <br>
 <br> <br>
 **addQuote(userQuote, quoteType)**: Adds a custom fortune to either the good or bad fortune file. Specify quoteType as 'g' for good and 'b' for bad.<br>
 
 For example: <br>
-```quoteGetter("You will get ice cream.", "g")``` <br>
+```addQuote("You will get ice cream.", "g")``` <br>
 <br> <br>
 **fortuneCookie()**: Prints a blank fortune cookie image.<br>
 
