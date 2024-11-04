@@ -8,7 +8,7 @@ where = ["src"]
 [project]
 name = "python_fortune_cookie"
 description = "Fortune Cookie Generator for python."
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Yeshni Savadatti", email= "ys4823@nyu.edu" }, { name="Lucia Song", email="lys7942@nyu.edu"}, { name="Chelsea Hodgson", email="csh7916@nyu.edu"}, { name="Alan Zhao", email="sz3562@nyu.edu"},
 ]

@@ -18,14 +18,14 @@ This project allows users to receive randomly generated fortunes, either good or
 ```git clone git@github.com:software-students-fall2024/3-python-package-scooby-gang.git``` <br>
 ```cd 3-python-package-scooby-gang``` <br>
 
-1. Make sure python is installed and install pipenv: <br>
+2. Make sure python is installed and install pipenv: <br>
 ```pip install pipenv OR pip3 install pipenv``` <br>
 
-2. Activate the virtual environment: <br>
+3. Activate the virtual environment: <br>
 ```pipenv shell``` <br>
 
-3. Install the package within the virtual environment: <br>
-```pipenv install python_fortune_cookie``` <br>
+4. Install the package within the virtual environment: <br>
+```pip install python-fortune-cookie==0.1.0``` <br>
 
 ### Command Line
 To use the fortune generator from the command line after installing the package and activating the virtual environment, navigate to the project’s root directory and use the following command:
