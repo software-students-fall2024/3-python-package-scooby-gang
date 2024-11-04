@@ -8,7 +8,7 @@
 
 ## Description
 Get your fortune for Python! <br>
-[Link to PyPi](https://pypi.org/project/python-fortune-cookie/0.1.0/)
+[Link to PyPi](https://pypi.org/project/python-fortune-cookie/0.1.1/)
 
 ## Usage
 This project allows users to receive randomly generated fortunes, either good or bad, by running commands in the terminal or by importing and using it as a module within a Python project. Users can create custom fortunes, generate a batch of random fortunes, or retrieve fortunes with a single function call.
