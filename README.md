@@ -40,7 +40,7 @@ To use the fortune generator as a module within your Python project, import spec
 
 ```from fortune import FortuneCookie```
 
-Here’s a brief description of each function and how to use it:
+Here’s a brief description of each function and how to use it: <br>
 
 **quoteGetter(fortuneAmount)**: Retrieves and prints a specified number of random good or bad fortunes. Returns a list of generated fortunes.<br>
 
@@ -61,12 +61,12 @@ For example: <br>
 
 For example: <br>
 ```fortuneCookie()``` <br>
-
 <br> <br>
 **randomFortuneCookie(fortuneAmount)**: Prints a specified number of random fortunes from both good and bad files.<br>
 
 For example: <br>
 ```randomFortuneCookie(5)``` <br>
+<br><br>
 **cookieScript(fortuneCustom)**: Simulates a process of creating or purchasing fortunes. Use 'c' for custom fortune and 'r' for random fortunes.<br>
 
 For example: <br>
@@ -75,14 +75,15 @@ For example: <br>
 ## Contributing
 We welcome contributions! Here’s how you can help:
 1. **Fork the Repository**: Start by forking the repository and cloning your fork to your local machine.
-2. **Create and Set up Virtual Environment**: Set up a virtual environment with pipenv, using:
+2. **Create and Set up Virtual Environment**: Set up a virtual environment with pipenv, using: <br>
 ```pip install pipenv OR pip3 install pipenv``` <br>
 and then: <br>
 ```pipenv shell``` <br>
-3. **Install Dependencies**: Make sure you have the necessary dependencies installed if pipenv was not used:
+3. **Install Dependencies**: Make sure you have the necessary dependencies installed if pipenv was not used: <br>
 ```$pip install -r requirements.txt OR pip3 install -r requirements.txt``` <br>
 4. **Create a New Branch**: Create a branch for your feature or bug fix.
-5. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory.
+5. **Make Changes and Write Tests**: Make your changes, ensuring that you add or update tests as needed in the tests directory. To run tests, use the command: <br>
+```python -m pytest OR python3 -m pytest``` <br>
 6. **Commit and Push Your Changes**: After finishing your work on local machine, commit and push your changes to git.
 7. **Create a Pull Request**: Go to the original repository and create a pull request for your changes.
 
