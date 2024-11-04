@@ -13,19 +13,19 @@ def quoteGetter(fortuneAmount):
     list = []
     while fortunes < fortuneAmount:
         print("What kind of fortune do you want? ")
-        fortuneType = input("Type G for Good, Type B for Bad:") 
+        fortuneType = input("Type G for Good, Type B for Bad: ") 
         fortunes+=1
         if fortuneType == "g" or fortuneType == "G":
             lines = open("GoodFortune.txt").read().splitlines()
             choice = random.choice(lines)
             list.append(choice)
-            print(choice)
+            print(choice + "\n")
 
         elif fortuneType == "b" or fortuneType == "B":
             lines = open("BadFortune.txt").read().splitlines()
             choice = random.choice(lines)
             list.append(choice)
-            print(choice)
+            print(choice + "\n")
         
         else : 
             print("Please pick a valid option (G or B) \n")
@@ -181,26 +181,26 @@ def cookieScript(fortuneCustom):
     """
 
     if fortuneCustom == "c":
-        userQuote = input("Enter your custom fortune:")
+        userQuote = input("Enter your custom fortune: ")
         customFortuneCookie(userQuote)
         #might be too similar to other fortune cookie functions could change to have params be c or p and then do either customCookie or the code below for purchase
 
     else:
-        fortuneAmount = int(input("You can have up to 10 so how many fortune cookies do you want:"))
+        fortuneAmount = int(input("You can have up to 10 so how many fortune cookies do you want: "))
 
         while fortuneAmount < 0 or fortuneAmount > 10:
             print("Inavlid Fortune amount, try again.")
-            fortuneAmount = int(input("You can have up to 10 so how many fortune cookies do you want:"))
+            fortuneAmount = int(input("You can have up to 10 so how many fortune cookies do you want: "))
 
         else:
             if fortuneAmount == 0:
                 print("Sad to see you go.")
             else:
                 if fortuneAmount < 6:
-                    fortuneRandom = input("Would you like a random fortune, yes or no:")
-                    if fortuneRandom == "yes":
+                    fortuneRandom = input("Would you like to pick the type of random fortune, yes or no: ")
+                    if fortuneRandom == "no":
                         randomFortuneCookie(fortuneAmount)
-                    elif fortuneRandom == "no":
+                    elif fortuneRandom == "yes":
                         #credit to https://www.houstonpress.com/restaurants/fortune-cookie-sayings-youd-never-want-to-get-6412278 for bad fortunes
                         #credit to https://www.quora.com/If-you-were-a-fortune-cookie-writer-what-funny-and-unexpected-fortunes-would-you-include for bad fortunes
                         quoteGetter(fortuneAmount)
