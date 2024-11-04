@@ -25,7 +25,7 @@ This project allows users to receive randomly generated fortunes, either good or
 ```pipenv shell``` <br>
 
 4. Install the package within the virtual environment: <br>
-```pip install python-fortune-cookie==0.1.0``` <br>
+```pip install python-fortune-cookie==0.1.1``` <br>
 
 ### Command Line
 To use the fortune generator from the command line after installing the package and activating the virtual environment, navigate to the project’s root directory and use the following command:
